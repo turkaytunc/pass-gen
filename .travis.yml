@@ -4,6 +4,12 @@ node_js:
 cache:
   directories:
     - node_modules
+
+branches:
+  except:
+    - test
+  only:
+    - main
 script:
   - npm test -- --coverage
   - npm run build
