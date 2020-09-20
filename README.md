@@ -1,1 +1,1 @@
-# pass-gen
+# :rocket: Simple password generator
