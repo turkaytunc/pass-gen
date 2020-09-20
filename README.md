@@ -1,2 +1,1 @@
 # pass-gen
-password generator
