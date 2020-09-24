@@ -15,7 +15,7 @@ export const GenPass = () => {
           Generate Password
         </button>
       </div>
-      <div>
+      <div className="pass-container">
         <p
           style={{
             height: '32px',
