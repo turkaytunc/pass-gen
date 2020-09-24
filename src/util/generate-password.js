@@ -6,7 +6,7 @@ export const generatePassword = (
   isLower = false,
   isPunctuation = false
 ) => {
-  if (length <= 0) return '';
+  if (length <= 0 || length > 30) return '';
   if ((isLower || isUpper || isPunctuation) === false) return '';
   let funcArr = [];
   if (isUpper) funcArr.push(generateUppercase);
