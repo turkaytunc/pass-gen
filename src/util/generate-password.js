@@ -15,11 +15,10 @@ export const generatePassword = (
 
   let result = '';
   for (let i = 0; i < length; i++) {
-    const rand = generateRandomNumber(0, funcArr.length - 1);
+    const rand = generateRandomNumber(0, funcArr.length);
     result = result.concat(funcArr[rand]());
   }
 
-  console.log(result);
   return result;
 };
 
@@ -36,6 +35,5 @@ const generateLowercase = () => {
 const generatePunctuation = () => {
   const puncString = '$#().,<>?=+*&!';
   const rand = generateRandomNumber(0, puncString.length - 1);
-
   return puncString[rand];
 };

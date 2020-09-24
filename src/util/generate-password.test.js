@@ -15,3 +15,7 @@ it('Should return zero', () => {
 it('Length should be zero', () => {
   expect(generatePassword(6)).toHaveLength(0);
 });
+
+it('Should contain characters', () => {
+  expect(generatePassword(5, true, true, true)).toMatch(/\w+/);
+});
