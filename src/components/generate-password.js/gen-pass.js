@@ -1,7 +1,7 @@
 import React from 'react';
 import usePassword from '../use-password/use-password';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
-import './gen-pass.css';
+import './gen-pass.scss';
 
 export const GenPass = () => {
   const [password, pass] = usePassword();
@@ -9,12 +9,7 @@ export const GenPass = () => {
     <div className="gen-pass">
       <div>
         <button
-          style={{
-            height: '32px',
-            borderRadius: '10px',
-            border: 'none',
-            outline: 'none',
-          }}
+          className="generate-button"
           onClick={() => pass(20, true, true, true)}
         >
           Generate Password
