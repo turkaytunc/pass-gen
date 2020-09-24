@@ -1,1 +1,5 @@
-export const generatePassword = (isUpper, isLower, isPunctuation) => {};
+export const generatePassword = (length, isUpper, isLower, isPunctuation) => {
+  return 3;
+};
+
+const generateUppercaseCharacter = () => {};
