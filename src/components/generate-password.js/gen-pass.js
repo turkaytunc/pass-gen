@@ -16,13 +16,7 @@ export const GenPass = () => {
         </button>
       </div>
       <div className="pass-container">
-        <p
-          style={{
-            height: '32px',
-          }}
-        >
-          {password}
-        </p>
+        <p>{password}</p>
       </div>
       <div>
         <CopyToClipboard text={password}>
