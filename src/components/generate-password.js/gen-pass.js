@@ -1,18 +1,13 @@
 import React, { useState } from 'react';
 import { generatePassword } from '../../util/generate-password';
+import usePassword from '../use-password/use-password';
 
 export const GenPass = () => {
-  const [password, setPassword] = useState('');
-  const pass = () => {
-    const password = generatePassword(20, true, true, true);
-
-    setPassword(password);
-  };
-
+  const [password, pass] = usePassword();
   return (
     <div>
       <button onClick={() => pass()}>Generate Password</button>
-      <p>{password}</p>
+      {password}
     </div>
   );
 };
