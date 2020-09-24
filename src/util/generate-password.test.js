@@ -5,13 +5,13 @@ it('Should return zero', () => {
 });
 
 it('Should return zero', () => {
-  expect(generatePassword(3)).toBe(0);
+  expect(generatePassword(3)).toBe('');
 });
 
 it('Should return zero', () => {
-  expect(generatePassword(5)).toBe(0);
+  expect(generatePassword(5)).toBe('');
 });
 
-it('Should return zero', () => {
-  expect(generatePassword(3, true)).toHaveLength(1);
+it('Length should be zero', () => {
+  expect(generatePassword(6)).toHaveLength(0);
 });

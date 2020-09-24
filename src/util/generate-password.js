@@ -11,7 +11,7 @@ export const generatePassword = (
   if (isUpper) funcArr.push(generateUppercase);
   if (isLower) funcArr.push(generateLowercase);
   if (isPunctuation) funcArr.push(generatePunctuation);
-  if (funcArr.length <= 0) return 0;
+  if (funcArr.length <= 0) return '';
 
   let result = '';
   for (let i = 0; i < length; i++) {
