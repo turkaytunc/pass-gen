@@ -1,6 +1,7 @@
 * {
   box-sizing: border-box;
 }
+
 .gen-pass {
   display: grid;
   grid-template-columns: 2fr 5fr 1fr;
@@ -24,6 +25,7 @@
     color: white;
   }
 }
+
 .pass-container {
   display: grid;
   background-color: rgb(240, 235, 235);
@@ -32,4 +34,16 @@
   align-items: center;
   text-align: center;
   justify-content: center;
+}
+
+@media only screen and (max-width: 520px) {
+  .gen-pass {
+    grid-template-columns: 1fr;
+    width: 50%;
+    margin-left: 25%;
+
+    > * {
+      margin-top: 1em;
+    }
+  }
 }
