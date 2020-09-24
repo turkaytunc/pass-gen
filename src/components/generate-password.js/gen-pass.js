@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import usePassword from '../use-password/use-password';
 
 export const GenPass = () => {
