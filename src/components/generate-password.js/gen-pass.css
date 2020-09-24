@@ -1,0 +1,10 @@
+.gen-pass {
+  background-color: aqua;
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  width: 50%;
+  margin-left: 25%;
+
+  align-items: center;
+  justify-content: center;
+}
