@@ -1,9 +1,9 @@
 import React from 'react';
 import { render } from '@testing-library/react';
-import App from './App';
+import { DisplayPassword } from './display-password';
 
-test('renders Hello Travis link', () => {
-  const { getByText } = render(<App />);
+test('renders DisplayPassword Travis link', () => {
+  const { getByText } = render(<DisplayPassword />);
   const linkElement = getByText(/Password/i);
   expect(linkElement).toBeInTheDocument();
 });
