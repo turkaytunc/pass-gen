@@ -7,16 +7,15 @@ export const generatePassword = (
   isPunctuation = false
 ) => {
   if (length <= 0) return 0;
+  if ((isLower || isUpper || isPunctuation) === false) return '';
   let funcArr = [];
   if (isUpper) funcArr.push(generateUppercase);
   if (isLower) funcArr.push(generateLowercase);
   if (isPunctuation) funcArr.push(generatePunctuation);
-  if (funcArr.length <= 0) return '';
 
   let result = '';
   for (let i = 0; i < length; i++) {
     const rand = generateRandomNumber(0, funcArr.length - 1);
-
     result = result.concat(funcArr[rand]());
   }
 
@@ -24,10 +23,19 @@ export const generatePassword = (
   return result;
 };
 
-export const generateUppercase = () => {
+const generateUppercase = () => {
   const rand = generateRandomNumber(65, 90);
 
   return String.fromCharCode(rand);
 };
-export const generateLowercase = () => {};
-export const generatePunctuation = () => {};
+const generateLowercase = () => {
+  const rand = generateRandomNumber(97, 122);
+
+  return String.fromCharCode(rand);
+};
+const generatePunctuation = () => {
+  const puncString = '$#().,<>?=+*&!';
+  const rand = generateRandomNumber(0, puncString.length - 1);
+
+  return puncString[rand];
+};
