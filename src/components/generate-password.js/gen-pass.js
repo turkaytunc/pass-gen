@@ -17,54 +17,50 @@ export const GenPass = () => {
   };
 
   const handleCheckboxChange = (event) => {
-    if (event.target.name === 'isUpper') {
-      setMarks({ ...marks, isUpper: event.target.checked });
-    }
-    if (event.target.name === 'isLower') {
-      setMarks({ ...marks, isLower: event.target.checked });
-    }
-    if (event.target.name === 'isPunctuation') {
-      setMarks({ ...marks, isPunctuation: event.target.checked });
+    let states = { ...marks };
+    let name = event.target.name;
+
+    for (const key in states) {
+      if (states.hasOwnProperty(key) && name === key) {
+        setMarks({ ...marks, [key]: name });
+      }
     }
   };
 
   return (
     <div className="generate-pass">
       <div className="checkbox-div">
-        <label>
-          Length{' '}
+        <div className="label-wrapper">
+          <label htmlFor="length">Length </label>
+          <label htmlFor="isUpper">Uppercase</label>
+          <label htmlFor="isLower">Lowercase</label>
+          <label htmlFor="isPunctuation">Punctuation</label>
+        </div>
+        <div className="input-wrapper">
           <input
             type="number"
-            style={{ width: '50px' }}
+            style={{ width: '50px', height: '15px' }}
             value={marks.length}
             onChange={(e) => setMarks({ ...marks, length: e.target.value })}
+            name="length"
           />
-        </label>
-        <label>
-          Uppercase
           <input
             value="isUpper"
             type="checkbox"
             name="isUpper"
             onChange={(e) => handleCheckboxChange(e)}
           />
-        </label>
-        <label>
-          Lowercase
           <input
             type="checkbox"
             name="isLower"
             onChange={(e) => handleCheckboxChange(e)}
           />
-        </label>
-        <label>
-          Punctuation
           <input
             type="checkbox"
             name="isPunctuation"
             onChange={(e) => handleCheckboxChange(e)}
           />
-        </label>
+        </div>
       </div>
       <div>
         <button
