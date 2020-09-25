@@ -38,9 +38,5 @@
 @media (max-width: 520px) {
   .generate-pass {
     grid-template-columns: 1fr;
-
-    > * {
-      margin-top: 1em;
-    }
   }
 }
