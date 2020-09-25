@@ -1,6 +1,6 @@
 language: node_js
 node_js:
-  - "stable"
+  - 'stable'
 cache:
   directories:
     - node_modules
@@ -10,6 +10,7 @@ branches:
   only:
     - main
 script:
+  - npm test -- --clearCache
   - npm test -- --coverage
   - npm run build
 after_script:
