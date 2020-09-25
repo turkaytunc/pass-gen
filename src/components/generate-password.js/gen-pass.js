@@ -13,38 +13,47 @@ export const GenPass = () => {
   });
 
   const handleGenerateButton = () => {
-    setMarks({
-      ...marks,
-      length: 20,
-      isUpper: false,
-      isLower: true,
-      isPunctuation: false,
-    });
+    pass(marks);
   };
 
-  const handleCheckboxChange = () => {};
-
-  useEffect(() => {
-    pass(marks);
-  }, [marks]);
+  const handleCheckboxChange = (event) => {
+    if (event.target.name === 'isUpper') {
+      setMarks({ ...marks, isUpper: event.target.checked });
+    }
+    if (event.target.name === 'isLower') {
+      setMarks({ ...marks, isLower: event.target.checked });
+    }
+    if (event.target.name === 'isPunctuation') {
+      setMarks({ ...marks, isPunctuation: event.target.checked });
+    }
+  };
 
   return (
     <div className="generate-pass">
       <div className="checkbox-div">
         <label>
-          isUpper
-          <input value={marks.isUpper} type="checkbox" name="isUpper" />
-        </label>
-        <label>
-          isLower
-          <input value={marks.isLower} type="checkbox" name="isLower" />
-        </label>
-        <label>
-          isPunctuation
+          Uppercase
           <input
-            value={marks.isPunctuation}
+            value="isUpper"
+            type="checkbox"
+            name="isUpper"
+            onChange={(e) => handleCheckboxChange(e)}
+          />
+        </label>
+        <label>
+          Lowercase
+          <input
+            type="checkbox"
+            name="isLower"
+            onChange={(e) => handleCheckboxChange(e)}
+          />
+        </label>
+        <label>
+          Punctuation
+          <input
             type="checkbox"
             name="isPunctuation"
+            onChange={(e) => handleCheckboxChange(e)}
           />
         </label>
       </div>
