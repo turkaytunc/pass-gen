@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/pass-gen/static/css/main.f2ccbeec.chunk.css",
+    "main.js": "/pass-gen/static/js/main.87e7b7c8.chunk.js",
+    "main.js.map": "/pass-gen/static/js/main.87e7b7c8.chunk.js.map",
+    "runtime-main.js": "/pass-gen/static/js/runtime-main.301845a4.js",
+    "runtime-main.js.map": "/pass-gen/static/js/runtime-main.301845a4.js.map",
+    "static/js/2.3344e0b7.chunk.js": "/pass-gen/static/js/2.3344e0b7.chunk.js",
+    "static/js/2.3344e0b7.chunk.js.map": "/pass-gen/static/js/2.3344e0b7.chunk.js.map",
+    "index.html": "/pass-gen/index.html",
+    "precache-manifest.8e828c7f85aa7307e0953d7bdb1c7061.js": "/pass-gen/precache-manifest.8e828c7f85aa7307e0953d7bdb1c7061.js",
+    "service-worker.js": "/pass-gen/service-worker.js",
+    "static/css/main.f2ccbeec.chunk.css.map": "/pass-gen/static/css/main.f2ccbeec.chunk.css.map",
+    "static/js/2.3344e0b7.chunk.js.LICENSE.txt": "/pass-gen/static/js/2.3344e0b7.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.301845a4.js",
+    "static/js/2.3344e0b7.chunk.js",
+    "static/css/main.f2ccbeec.chunk.css",
+    "static/js/main.87e7b7c8.chunk.js"
+  ]
+}
