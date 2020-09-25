@@ -6,8 +6,8 @@ import './gen-pass.scss';
 export const GenPass = () => {
   const [password, pass] = usePassword();
   const [marks, setMarks] = useState({
-    length: 0,
-    isUpper: false,
+    length: 20,
+    isUpper: true,
     isLower: false,
     isPunctuation: false,
   });
@@ -16,17 +16,29 @@ export const GenPass = () => {
     setMarks({
       ...marks,
       length: 20,
-      isLower: true,
       isUpper: false,
+      isLower: true,
       isPunctuation: false,
     });
+    pass(marks);
   };
 
-  useEffect(() => {
-    pass(marks);
-  }, [marks]);
   return (
     <div className="generate-pass">
+      <div className="checkbox-div">
+        <label>
+          isUpper
+          <input type="checkbox" name="isUpper" />
+        </label>
+        <label>
+          isLower
+          <input type="checkbox" name="isLower" />
+        </label>
+        <label>
+          isPunctuation
+          <input type="checkbox" name="isPunctuation" />
+        </label>
+      </div>
       <div>
         <button
           className="generate-button"

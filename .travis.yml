@@ -1,6 +1,6 @@
 language: node_js
 node_js:
-  - 'stable'
+  - "stable"
 cache:
   directories:
     - node_modules
@@ -12,7 +12,7 @@ branches:
 script:
   - npm test -- --clearCache
   - npm test -- --coverage
-  - npm run build
+  - npm run build CI=false
 after_script:
   - COVERALLS_REPO_TOKEN=$COVERALL_TOKEN npm run coveralls
 deploy:
