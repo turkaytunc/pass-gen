@@ -1,16 +1,48 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import usePassword from '../use-password/use-password';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
 import './gen-pass.scss';
 
 export const GenPass = () => {
   const [password, pass] = usePassword();
+  const [marks, setMarks] = useState({
+    length: 20,
+    isUpper: true,
+    isLower: false,
+    isPunctuation: false,
+  });
+
+  const handleGenerateButton = () => {
+    setMarks({
+      ...marks,
+      length: 20,
+      isUpper: false,
+      isLower: true,
+      isPunctuation: false,
+    });
+    pass(marks);
+  };
+
   return (
     <div className="generate-pass">
+      <div className="checkbox-div">
+        <label>
+          isUpper
+          <input type="checkbox" name="isUpper" />
+        </label>
+        <label>
+          isLower
+          <input type="checkbox" name="isLower" />
+        </label>
+        <label>
+          isPunctuation
+          <input type="checkbox" name="isPunctuation" />
+        </label>
+      </div>
       <div>
         <button
           className="generate-button"
-          onClick={() => pass(20, true, true, true)}
+          onClick={() => handleGenerateButton()}
         >
           Generate Password
         </button>

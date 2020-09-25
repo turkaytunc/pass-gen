@@ -4,9 +4,9 @@
 
 .generate-pass {
   display: grid;
-  grid-template-columns: 2fr 5fr 1fr;
-  width: 50%;
-  margin-left: 25%;
+  grid-template-columns: 2fr 2fr 5fr 1fr;
+  width: 70%;
+  margin-left: 15%;
   align-items: center;
   justify-content: center;
 }
@@ -35,11 +35,15 @@
   justify-content: center;
 }
 
+.checkbox-div {
+  display: grid;
+  grid-template-columns: 1fr;
+  text-align: end;
+}
+
 @media (max-width: 520px) {
   .generate-pass {
     grid-template-columns: 1fr;
-    width: 70%;
-    margin-left: 15%;
   }
 
   .pass-container {
