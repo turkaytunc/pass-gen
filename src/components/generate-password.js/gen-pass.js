@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import usePassword from '../use-password/use-password';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
 import './gen-pass.scss';
@@ -13,38 +13,56 @@ export const GenPass = () => {
   });
 
   const handleGenerateButton = () => {
-    setMarks({
-      ...marks,
-      length: 20,
-      isUpper: false,
-      isLower: true,
-      isPunctuation: false,
-    });
+    pass(marks);
   };
 
-  const handleCheckboxChange = () => {};
-
-  useEffect(() => {
-    pass(marks);
-  }, [marks]);
+  const handleCheckboxChange = (event) => {
+    if (event.target.name === 'isUpper') {
+      setMarks({ ...marks, isUpper: event.target.checked });
+    }
+    if (event.target.name === 'isLower') {
+      setMarks({ ...marks, isLower: event.target.checked });
+    }
+    if (event.target.name === 'isPunctuation') {
+      setMarks({ ...marks, isPunctuation: event.target.checked });
+    }
+  };
 
   return (
     <div className="generate-pass">
       <div className="checkbox-div">
         <label>
-          isUpper
-          <input value={marks.isUpper} type="checkbox" name="isUpper" />
-        </label>
-        <label>
-          isLower
-          <input value={marks.isLower} type="checkbox" name="isLower" />
-        </label>
-        <label>
-          isPunctuation
+          Length{' '}
           <input
-            value={marks.isPunctuation}
+            type="number"
+            style={{ width: '50px' }}
+            value={marks.length}
+            onChange={(e) => setMarks({ ...marks, length: e.target.value })}
+          />
+        </label>
+        <label>
+          Uppercase
+          <input
+            value="isUpper"
+            type="checkbox"
+            name="isUpper"
+            onChange={(e) => handleCheckboxChange(e)}
+          />
+        </label>
+        <label>
+          Lowercase
+          <input
+            type="checkbox"
+            name="isLower"
+            onChange={(e) => handleCheckboxChange(e)}
+          />
+        </label>
+        <label>
+          Punctuation
+          <input
             type="checkbox"
             name="isPunctuation"
+            onChange={(e) => handleCheckboxChange(e)}
           />
         </label>
       </div>
