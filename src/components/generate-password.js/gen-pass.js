@@ -7,7 +7,7 @@ export const GenPass = () => {
   const [password, pass] = usePassword();
   const [marks, setMarks] = useState({
     length: 20,
-    isUpper: true,
+    isUpper: false,
     isLower: false,
     isPunctuation: false,
   });
@@ -20,23 +20,32 @@ export const GenPass = () => {
       isLower: true,
       isPunctuation: false,
     });
-    pass(marks);
   };
+
+  const handleCheckboxChange = () => {};
+
+  useEffect(() => {
+    pass(marks);
+  }, [marks]);
 
   return (
     <div className="generate-pass">
       <div className="checkbox-div">
         <label>
           isUpper
-          <input type="checkbox" name="isUpper" />
+          <input value={marks.isUpper} type="checkbox" name="isUpper" />
         </label>
         <label>
           isLower
-          <input type="checkbox" name="isLower" />
+          <input value={marks.isLower} type="checkbox" name="isLower" />
         </label>
         <label>
           isPunctuation
-          <input type="checkbox" name="isPunctuation" />
+          <input
+            value={marks.isPunctuation}
+            type="checkbox"
+            name="isPunctuation"
+          />
         </label>
       </div>
       <div>

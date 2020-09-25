@@ -12,7 +12,7 @@ branches:
 script:
   - npm test -- --clearCache
   - npm test -- --coverage
-  - npm run build CI=false
+  - CI=false npm run build
 after_script:
   - COVERALLS_REPO_TOKEN=$COVERALL_TOKEN npm run coveralls
 deploy:
