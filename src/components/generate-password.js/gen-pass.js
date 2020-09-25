@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import usePassword from '../use-password/use-password';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
 import './gen-pass.scss';
@@ -31,6 +31,15 @@ export const GenPass = () => {
   return (
     <div className="generate-pass">
       <div className="checkbox-div">
+        <label>
+          Length{' '}
+          <input
+            type="number"
+            style={{ width: '50px' }}
+            value={marks.length}
+            onChange={(e) => setMarks({ ...marks, length: e.target.value })}
+          />
+        </label>
         <label>
           Uppercase
           <input
