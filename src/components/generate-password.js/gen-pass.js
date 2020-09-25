@@ -6,7 +6,7 @@ import './gen-pass.scss';
 export const GenPass = () => {
   const [password, pass] = usePassword();
   return (
-    <div className="gen-pass">
+    <div className="generate-pass">
       <div>
         <button
           className="generate-button"

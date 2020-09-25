@@ -2,12 +2,11 @@
   box-sizing: border-box;
 }
 
-.gen-pass {
+.generate-pass {
   display: grid;
   grid-template-columns: 2fr 5fr 1fr;
   width: 50%;
   margin-left: 25%;
-
   align-items: center;
   justify-content: center;
 }
@@ -36,11 +35,9 @@
   justify-content: center;
 }
 
-@media only screen and (max-width: 520px) {
-  .gen-pass {
+@media (max-width: 520px) {
+  .generate-pass {
     grid-template-columns: 1fr;
-    width: 50%;
-    margin-left: 25%;
 
     > * {
       margin-top: 1em;
